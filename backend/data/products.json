@@ -1,0 +1,502 @@
+[
+  {
+    "id": "SKU-0001",
+    "name": "Sony WH-1000XM5 Wireless Headphones",
+    "description": "Industry-leading noise cancelling headphones with 30-hour battery life. Features multipoint connection and crystal clear hands-free calling. Foldable design for easy portability.",
+    "category": "Electronics",
+    "tags": ["wireless", "noise-cancelling", "bluetooth", "headphones", "sony"],
+    "price": 349.99,
+    "stock": 23,
+    "rating": 4.8
+  },
+  {
+    "id": "SKU-0002",
+    "name": "Sony WH-1000XM4 Wireless Headphones",
+    "description": "Previous generation Sony noise cancelling headphones with 35-hour battery life. Excellent sound quality with LDAC support and speak-to-chat technology.",
+    "category": "Electronics",
+    "tags": ["wireless", "noise-cancelling", "bluetooth", "headphones", "sony"],
+    "price": 249.99,
+    "stock": 8,
+    "rating": 4.7
+  },
+  {
+    "id": "SKU-0003",
+    "name": "Bose QuietComfort 45 Headphones",
+    "description": "Premium wireless headphones with world-class noise cancellation. Lightweight design with soft ear cushions for all-day comfort. 24-hour battery life with quick charge.",
+    "category": "Electronics",
+    "tags": ["wireless", "noise-cancelling", "bluetooth", "headphones", "bose"],
+    "price": 279.00,
+    "stock": 15,
+    "rating": 4.6
+  },
+  {
+    "id": "SKU-0004",
+    "name": "Apple AirPods Pro (2nd Gen)",
+    "description": "Active noise cancellation with Transparency mode. Adaptive Audio adjusts to your environment in real time. MagSafe charging case with up to 30 hours total battery.",
+    "category": "Electronics",
+    "tags": ["wireless", "earbuds", "noise-cancelling", "apple", "bluetooth"],
+    "price": 249.00,
+    "stock": 41,
+    "rating": 4.7
+  },
+  {
+    "id": "SKU-0005",
+    "name": "Anker Soundcore Q45 Headphones",
+    "description": "Budget-friendly wireless headphones with active noise cancelling. 50-hour playtime and hi-res audio certification. Foldable design with carrying case included.",
+    "category": "Electronics",
+    "tags": ["wireless", "noise-cancelling", "bluetooth", "headphones", "budget"],
+    "price": 79.99,
+    "stock": 0,
+    "rating": 4.2
+  },
+  {
+    "id": "SKU-0006",
+    "name": "Logitech MX Master 3S Mouse",
+    "description": "Advanced wireless mouse with ultra-fast MagSpeed scrolling and 8K DPI sensor. Works on any surface including glass. Ergonomic design for all-day comfort.",
+    "category": "Electronics",
+    "tags": ["wireless", "mouse", "ergonomic", "logitech", "productivity"],
+    "price": 99.99,
+    "stock": 34,
+    "rating": 4.8
+  },
+  {
+    "id": "SKU-0007",
+    "name": "Keychron K2 Mechanical Keyboard",
+    "description": "Compact 75% wireless mechanical keyboard compatible with Mac and Windows. Hot-swappable switches with RGB backlight. Aluminium frame for a premium typing experience.",
+    "category": "Electronics",
+    "tags": ["keyboard", "mechanical", "wireless", "bluetooth", "rgb"],
+    "price": 89.99,
+    "stock": 19,
+    "rating": 4.5
+  },
+  {
+    "id": "SKU-0008",
+    "name": "Samsung 27\" 4K Monitor",
+    "description": "Ultra-high definition IPS monitor with 99% sRGB coverage and HDR support. Slim bezel design with VESA mount compatibility. USB-C connectivity with 65W power delivery.",
+    "category": "Electronics",
+    "tags": ["monitor", "4k", "samsung", "uhd", "usb-c"],
+    "price": 449.00,
+    "stock": 7,
+    "rating": 4.5
+  },
+  {
+    "id": "SKU-0009",
+    "name": "Portable Bluetooth Speaker",
+    "description": "Waterproof outdoor speaker with 360-degree sound and 20-hour playtime. Dustproof and shockproof casing suitable for beach, hiking, and camping. Pairs with two devices simultaneously.",
+    "category": "Electronics",
+    "tags": ["bluetooth", "speaker", "waterproof", "portable", "outdoor"],
+    "price": 59.99,
+    "stock": 0,
+    "rating": 4.3
+  },
+  {
+    "id": "SKU-0010",
+    "name": "USB-C Charging Hub 7-in-1",
+    "description": "Expand your laptop with 4K HDMI, 100W PD pass-through, SD card reader, and three USB-A ports. Aluminium shell with thermal management. Compatible with MacBook and Windows laptops.",
+    "category": "Electronics",
+    "tags": ["usb-c", "hub", "hdmi", "charging", "productivity"],
+    "price": 49.99,
+    "stock": 55,
+    "rating": 4.4
+  },
+  {
+    "id": "SKU-0011",
+    "name": "Trail Running Shoes - Men",
+    "description": "Lightweight trail running shoes with aggressive grip outsole for technical terrain. Breathable mesh upper with rock protection plate. Available in wide fit.",
+    "category": "Sports",
+    "tags": ["running", "trail", "outdoor", "waterproof", "men"],
+    "price": 129.00,
+    "stock": 0,
+    "rating": 4.3
+  },
+  {
+    "id": "SKU-0012",
+    "name": "Trail Running Shoes - Women",
+    "description": "Women-specific trail running shoes with responsive cushioning and durable outsole. Waterproof Gore-Tex membrane keeps feet dry on wet terrain. Reflective details for low-light visibility.",
+    "category": "Sports",
+    "tags": ["running", "trail", "outdoor", "waterproof", "women"],
+    "price": 134.00,
+    "stock": 14,
+    "rating": 4.4
+  },
+  {
+    "id": "SKU-0013",
+    "name": "Yoga Mat Premium Non-Slip",
+    "description": "6mm thick eco-friendly yoga mat with alignment lines and non-slip texture on both sides. Includes carrying strap and free online beginner yoga guide. Odour-resistant material.",
+    "category": "Sports",
+    "tags": ["yoga", "fitness", "non-slip", "eco-friendly", "mat"],
+    "price": 45.00,
+    "stock": 82,
+    "rating": 4.6
+  },
+  {
+    "id": "SKU-0014",
+    "name": "Adjustable Dumbbell Set 5-52.5 lbs",
+    "description": "Space-saving adjustable dumbbells replace 15 sets of weights. Dial system adjusts in 2.5 lb increments. Secure locking mechanism and durable moulded plastic coating.",
+    "category": "Sports",
+    "tags": ["weights", "dumbbell", "home-gym", "adjustable", "fitness"],
+    "price": 349.00,
+    "stock": 6,
+    "rating": 4.7
+  },
+  {
+    "id": "SKU-0015",
+    "name": "Resistance Bands Set",
+    "description": "Set of five resistance bands with varying tension levels from 10 to 50 lbs. Includes door anchor, handles, and ankle straps. Suitable for rehabilitation and strength training.",
+    "category": "Sports",
+    "tags": ["resistance", "bands", "fitness", "portable", "home-gym"],
+    "price": 29.99,
+    "stock": 120,
+    "rating": 4.4
+  },
+  {
+    "id": "SKU-0016",
+    "name": "Foam Roller for Muscle Recovery",
+    "description": "High-density foam roller for deep tissue massage and myofascial release. Grid pattern for targeted pressure. Hollow core for durability. Ideal for pre and post workout.",
+    "category": "Sports",
+    "tags": ["recovery", "foam-roller", "massage", "fitness", "physio"],
+    "price": 34.99,
+    "stock": 0,
+    "rating": 4.5
+  },
+  {
+    "id": "SKU-0017",
+    "name": "Ceramic Pour-Over Coffee Set",
+    "description": "Hand-thrown ceramic dripper with matching carafe for a refined pour-over brewing ritual. Includes 40 bleached paper filters. Dishwasher safe. Brews 600ml per batch.",
+    "category": "Home",
+    "tags": ["coffee", "pour-over", "ceramic", "brewing", "handmade"],
+    "price": 54.00,
+    "stock": 61,
+    "rating": 4.6
+  },
+  {
+    "id": "SKU-0018",
+    "name": "Stainless Steel French Press",
+    "description": "Double-walled stainless steel French press that keeps coffee hot for up to an hour. Micro-filtered plunger prevents grounds from entering your cup. 1 litre capacity.",
+    "category": "Home",
+    "tags": ["coffee", "french-press", "stainless-steel", "brewing", "insulated"],
+    "price": 39.99,
+    "stock": 44,
+    "rating": 4.4
+  },
+  {
+    "id": "SKU-0019",
+    "name": "Bamboo Cutting Board Set",
+    "description": "Set of three bamboo cutting boards in small, medium, and large sizes. Naturally antimicrobial surface with juice groove on large board. Includes non-slip feet.",
+    "category": "Home",
+    "tags": ["bamboo", "kitchen", "eco-friendly", "cutting-board", "cooking"],
+    "price": 32.00,
+    "stock": 73,
+    "rating": 4.5
+  },
+  {
+    "id": "SKU-0020",
+    "name": "Cast Iron Skillet 12 inch",
+    "description": "Pre-seasoned cast iron skillet for even heat distribution and superior heat retention. Oven safe to 500°F. Compatible with all cooktops including induction. Builds natural non-stick patina over time.",
+    "category": "Home",
+    "tags": ["cast-iron", "cooking", "skillet", "oven-safe", "induction"],
+    "price": 44.95,
+    "stock": 29,
+    "rating": 4.8
+  },
+  {
+    "id": "SKU-0021",
+    "name": "Linen Duvet Cover Set - Queen",
+    "description": "100% French linen duvet cover with two pillowcases. Pre-washed for a soft, lived-in feel from day one. Breathable and thermoregulating for year-round comfort. Stone-washed finish.",
+    "category": "Home",
+    "tags": ["linen", "bedding", "breathable", "queen", "stonewashed"],
+    "price": 159.00,
+    "stock": 18,
+    "rating": 4.7
+  },
+  {
+    "id": "SKU-0022",
+    "name": "Scented Soy Candle - Cedarwood",
+    "description": "Hand-poured soy wax candle with pure cedarwood and sandalwood essential oils. 50-hour burn time in a reusable amber glass jar. Lead-free cotton wick. Made in small batches.",
+    "category": "Home",
+    "tags": ["candle", "soy", "scented", "cedarwood", "handmade"],
+    "price": 28.00,
+    "stock": 95,
+    "rating": 4.6
+  },
+  {
+    "id": "SKU-0023",
+    "name": "Air Purifier with HEPA Filter",
+    "description": "True HEPA air purifier covering up to 500 sq ft. Removes 99.97% of airborne particles including dust, pollen, and pet dander. Auto mode adjusts fan speed based on air quality sensor.",
+    "category": "Home",
+    "tags": ["air-purifier", "hepa", "allergens", "clean-air", "auto-mode"],
+    "price": 129.99,
+    "stock": 11,
+    "rating": 4.5
+  },
+  {
+    "id": "SKU-0024",
+    "name": "Linen Overshirt - Natural",
+    "description": "Relaxed-fit overshirt in 100% European linen. Breathable and lightweight for warm weather layering. Chest pocket and button-through placket. Garment-washed for a soft drape.",
+    "category": "Clothing",
+    "tags": ["linen", "shirt", "breathable", "summer", "men"],
+    "price": 89.00,
+    "stock": 12,
+    "rating": 4.1
+  },
+  {
+    "id": "SKU-0025",
+    "name": "Merino Wool Crew Neck Sweater",
+    "description": "Classic crew neck sweater in 100% merino wool. Naturally temperature-regulating, odour-resistant, and machine washable. Ribbed cuffs and hem for a refined finish. Available in 8 colours.",
+    "category": "Clothing",
+    "tags": ["merino", "wool", "sweater", "winter", "machine-washable"],
+    "price": 119.00,
+    "stock": 37,
+    "rating": 4.6
+  },
+  {
+    "id": "SKU-0026",
+    "name": "Organic Cotton T-Shirt Pack (3)",
+    "description": "Pack of three essential t-shirts in GOTS-certified organic cotton. Pre-shrunk fabric with a structured fit that doesn't lose shape after washing. Available in white, black, and grey.",
+    "category": "Clothing",
+    "tags": ["organic", "cotton", "t-shirt", "essential", "eco-friendly"],
+    "price": 54.00,
+    "stock": 200,
+    "rating": 4.5
+  },
+  {
+    "id": "SKU-0027",
+    "name": "Waterproof Hiking Jacket",
+    "description": "3-layer waterproof and windproof hardshell jacket with fully taped seams. Packable into its own chest pocket. Helmet-compatible hood with one-hand adjustment. 20,000mm waterproof rating.",
+    "category": "Clothing",
+    "tags": ["waterproof", "jacket", "hiking", "outdoor", "windproof"],
+    "price": 229.00,
+    "stock": 9,
+    "rating": 4.7
+  },
+  {
+    "id": "SKU-0028",
+    "name": "Slim Chino Trousers",
+    "description": "Slim-fit chino trousers in stretch cotton blend for all-day comfort. Four-pocket styling with a clean, tailored silhouette. Machine washable. Available in khaki, navy, and olive.",
+    "category": "Clothing",
+    "tags": ["chino", "trousers", "slim-fit", "stretch", "smart-casual"],
+    "price": 69.00,
+    "stock": 0,
+    "rating": 4.2
+  },
+  {
+    "id": "SKU-0029",
+    "name": "Down Puffer Vest",
+    "description": "Lightweight 700-fill down vest with windproof shell. Packable design fits into its own pocket. Ideal as a mid-layer under a shell or worn standalone in mild weather.",
+    "category": "Clothing",
+    "tags": ["down", "vest", "puffer", "packable", "winter"],
+    "price": 99.00,
+    "stock": 22,
+    "rating": 4.4
+  },
+  {
+    "id": "SKU-0030",
+    "name": "Vitamin C Brightening Serum",
+    "description": "15% L-ascorbic acid serum with vitamin E and ferulic acid for maximum antioxidant protection. Reduces dark spots and evens skin tone with daily use. Suitable for all skin types.",
+    "category": "Beauty",
+    "tags": ["vitamin-c", "serum", "brightening", "antioxidant", "skincare"],
+    "price": 42.00,
+    "stock": 58,
+    "rating": 4.6
+  },
+  {
+    "id": "SKU-0031",
+    "name": "Retinol Night Cream",
+    "description": "0.3% encapsulated retinol cream with hyaluronic acid and ceramides. Minimises fine lines and refines skin texture overnight. Fragrance-free and dermatologist-tested formula.",
+    "category": "Beauty",
+    "tags": ["retinol", "night-cream", "anti-aging", "fragrance-free", "skincare"],
+    "price": 38.00,
+    "stock": 0,
+    "rating": 4.5
+  },
+  {
+    "id": "SKU-0032",
+    "name": "SPF 50 Mineral Sunscreen",
+    "description": "Lightweight mineral sunscreen with zinc oxide. No white cast formula suitable for all skin tones. Water-resistant for 80 minutes. Reef-safe and fragrance-free. Daily use size 75ml.",
+    "category": "Beauty",
+    "tags": ["sunscreen", "spf50", "mineral", "fragrance-free", "reef-safe"],
+    "price": 24.99,
+    "stock": 143,
+    "rating": 4.4
+  },
+  {
+    "id": "SKU-0033",
+    "name": "Hyaluronic Acid Moisturiser",
+    "description": "Lightweight gel-cream moisturiser with three molecular weights of hyaluronic acid for deep and surface hydration. Non-comedogenic formula suitable for oily and combination skin types.",
+    "category": "Beauty",
+    "tags": ["hyaluronic-acid", "moisturiser", "hydration", "skincare", "gel-cream"],
+    "price": 31.00,
+    "stock": 76,
+    "rating": 4.5
+  },
+  {
+    "id": "SKU-0034",
+    "name": "Rosehip Facial Oil",
+    "description": "Cold-pressed rosehip seed oil rich in omega fatty acids and beta-carotene. Absorbs quickly without greasiness. Certified organic and sustainably sourced. 30ml dropper bottle.",
+    "category": "Beauty",
+    "tags": ["rosehip", "facial-oil", "organic", "omega", "skincare"],
+    "price": 22.00,
+    "stock": 0,
+    "rating": 4.3
+  },
+  {
+    "id": "SKU-0035",
+    "name": "Niacinamide 10% Serum",
+    "description": "High-strength niacinamide serum that visibly reduces pore size and controls excess sebum. Pairs well with hyaluronic acid and vitamin C. 30ml with dropper applicator.",
+    "category": "Beauty",
+    "tags": ["niacinamide", "serum", "pores", "oil-control", "skincare"],
+    "price": 18.00,
+    "stock": 89,
+    "rating": 4.6
+  },
+  {
+    "id": "SKU-0036",
+    "name": "Atomic Habits by James Clear",
+    "description": "The definitive guide to building good habits and breaking bad ones. Practical framework based on tiny 1% improvements that compound over time. Over 10 million copies sold worldwide.",
+    "category": "Books",
+    "tags": ["self-help", "habits", "productivity", "bestseller", "non-fiction"],
+    "price": 16.99,
+    "stock": 200,
+    "rating": 4.9
+  },
+  {
+    "id": "SKU-0037",
+    "name": "Deep Work by Cal Newport",
+    "description": "Rules for focused success in a distracted world. Argues that the ability to perform deep, undistracted work is becoming increasingly rare and valuable. Essential reading for knowledge workers.",
+    "category": "Books",
+    "tags": ["productivity", "focus", "non-fiction", "work", "self-help"],
+    "price": 14.99,
+    "stock": 155,
+    "rating": 4.7
+  },
+  {
+    "id": "SKU-0038",
+    "name": "The Design of Everyday Things",
+    "description": "Don Norman's classic on user-centred design. Explains why some products satisfy customers while others frustrate them. Essential reading for designers, engineers, and product managers.",
+    "category": "Books",
+    "tags": ["design", "ux", "product", "engineering", "non-fiction"],
+    "price": 19.99,
+    "stock": 43,
+    "rating": 4.7
+  },
+  {
+    "id": "SKU-0039",
+    "name": "Thinking, Fast and Slow",
+    "description": "Daniel Kahneman's exploration of the two systems that drive human thought. Covers cognitive biases, decision-making, and the psychology of judgement. Groundbreaking and accessible.",
+    "category": "Books",
+    "tags": ["psychology", "decision-making", "non-fiction", "cognitive-science", "bestseller"],
+    "price": 15.99,
+    "stock": 0,
+    "rating": 4.8
+  },
+  {
+    "id": "SKU-0040",
+    "name": "Clean Code by Robert C. Martin",
+    "description": "A handbook of agile software craftsmanship. Covers naming, functions, error handling, and refactoring with practical examples in Java. Required reading for professional software developers.",
+    "category": "Books",
+    "tags": ["programming", "software", "engineering", "clean-code", "java"],
+    "price": 39.99,
+    "stock": 67,
+    "rating": 4.5
+  },
+  {
+    "id": "SKU-0041",
+    "name": "The Pragmatic Programmer",
+    "description": "Your journey to mastery. Covers topics from personal responsibility and career development to architectural techniques for keeping code flexible and easy to adapt and reuse.",
+    "category": "Books",
+    "tags": ["programming", "software", "engineering", "career", "best-practices"],
+    "price": 44.99,
+    "stock": 38,
+    "rating": 4.8
+  },
+  {
+    "id": "SKU-0042",
+    "name": "Insulated Water Bottle 1L",
+    "description": "Double-wall vacuum insulated stainless steel bottle. Keeps drinks cold for 24 hours and hot for 12 hours. Leak-proof lid with carry loop. BPA-free and dishwasher safe.",
+    "category": "Sports",
+    "tags": ["water-bottle", "insulated", "stainless-steel", "bpa-free", "outdoor"],
+    "price": 34.99,
+    "stock": 167,
+    "rating": 4.7
+  },
+  {
+    "id": "SKU-0043",
+    "name": "Gym Bag with Shoe Compartment",
+    "description": "40L duffel bag with separate ventilated shoe compartment and wet/dry pouch. Padded shoulder strap and grab handle. Multiple internal pockets for organised storage.",
+    "category": "Sports",
+    "tags": ["bag", "gym", "duffel", "sports", "storage"],
+    "price": 54.99,
+    "stock": 31,
+    "rating": 4.3
+  },
+  {
+    "id": "SKU-0044",
+    "name": "Jump Rope - Speed Cable",
+    "description": "Lightweight aluminium handle speed rope with adjustable PVC-coated steel cable. Ball bearing handles for smooth, fast rotation. Used in CrossFit and boxing training.",
+    "category": "Sports",
+    "tags": ["jump-rope", "cardio", "crossfit", "speed", "fitness"],
+    "price": 19.99,
+    "stock": 0,
+    "rating": 4.4
+  },
+  {
+    "id": "SKU-0045",
+    "name": "Wireless Charging Pad 15W",
+    "description": "Fast wireless charger compatible with iPhone and Android devices. 15W output for Samsung, 12W for iPhone MagSafe, 10W for standard Qi devices. LED indicator with sleep-friendly dim mode.",
+    "category": "Electronics",
+    "tags": ["wireless-charging", "qi", "magsafe", "fast-charge", "charging"],
+    "price": 29.99,
+    "stock": 88,
+    "rating": 4.3
+  },
+  {
+    "id": "SKU-0046",
+    "name": "Standing Desk Mat Anti-Fatigue",
+    "description": "Ergonomic anti-fatigue mat for standing desks with bevelled edges to prevent tripping. Memory foam core with durable polyurethane surface. 75cm x 50cm footprint.",
+    "category": "Home",
+    "tags": ["ergonomic", "standing-desk", "anti-fatigue", "mat", "office"],
+    "price": 64.99,
+    "stock": 26,
+    "rating": 4.5
+  },
+  {
+    "id": "SKU-0047",
+    "name": "Himalayan Salt Lamp",
+    "description": "Authentic hand-carved Himalayan pink salt lamp with dimmer switch. Warm amber glow creates a calming atmosphere. Each lamp is unique in shape and size. 3-4kg average weight.",
+    "category": "Home",
+    "tags": ["salt-lamp", "himalayan", "ambient", "decor", "wellness"],
+    "price": 29.99,
+    "stock": 0,
+    "rating": 4.2
+  },
+  {
+    "id": "SKU-0048",
+    "name": "Merino Wool Running Socks (3 Pack)",
+    "description": "Cushioned merino wool running socks with arch support and blister-resistant stitching. Moisture-wicking and naturally odour-resistant. Quarter-length with reinforced heel and toe.",
+    "category": "Sports",
+    "tags": ["merino", "socks", "running", "wool", "moisture-wicking"],
+    "price": 24.99,
+    "stock": 54,
+    "rating": 4.6
+  },
+  {
+    "id": "SKU-0049",
+    "name": "Cold Brew Coffee Maker",
+    "description": "1.5 litre cold brew coffee maker with ultra-fine mesh filter. Steep in the fridge for 12-24 hours for a smooth, low-acidity brew. Airtight lid keeps fresh for up to two weeks.",
+    "category": "Home",
+    "tags": ["coffee", "cold-brew", "brewing", "kitchen", "airtight"],
+    "price": 36.00,
+    "stock": 48,
+    "rating": 4.5
+  },
+  {
+    "id": "SKU-0050",
+    "name": "Portable Laptop Stand Foldable",
+    "description": "Adjustable aluminium laptop stand with six height and angle settings. Folds flat for travel. Compatible with 10-16 inch laptops. Improves posture and reduces neck strain during work.",
+    "category": "Electronics",
+    "tags": ["laptop-stand", "ergonomic", "portable", "aluminium", "productivity"],
+    "price": 39.99,
+    "stock": 72,
+    "rating": 4.6
+  }
+]
