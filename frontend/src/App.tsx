@@ -21,8 +21,9 @@ function App() {
       setMenuFocusedIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
     } else if (e.key === 'Enter') {
       e.preventDefault();
-      // the Enter key handles selection which now just prints to console and expands inside MegaMenu maybe?
-      // actually, just ignore or log to console.
+      if (menuFocusedIndex >= 0 && menuFocusedIndex < results.topResults.length) {
+        alert(`Navigating to: ${results.topResults[menuFocusedIndex].name}`);
+      }
     } else if (e.key === 'Escape') {
       setMenuFocusedIndex(-1);
     }
