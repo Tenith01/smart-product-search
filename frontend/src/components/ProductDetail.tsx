@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import type { ProductResult } from '../types/product';
+import { StarRating } from './StarRating';
 
 interface ProductDetailProps {
   product: ProductResult;
@@ -7,7 +8,6 @@ interface ProductDetailProps {
 }
 
 export function ProductDetail({ product, onClose }: ProductDetailProps) {
-  const ratingPercent = (product.rating / 5) * 100;
   const scorePercent = Math.min(Math.round(product.score * 100), 100);
 
   useEffect(() => {
@@ -33,10 +33,7 @@ export function ProductDetail({ product, onClose }: ProductDetailProps) {
           <div className="detail-stats">
             <span className="detail-price">${product.price.toFixed(2)}</span>
             <span className="detail-rating star-rating" title={`${product.rating.toFixed(1)} out of 5`}>
-              <span className="stars-container">
-                <span className="stars-empty">★★★★★</span>
-                <span className="stars-filled" style={{ width: `${ratingPercent}%` }}>★★★★★</span>
-              </span>
+              <StarRating rating={product.rating} />
               <span className="rating-value">{product.rating.toFixed(1)}</span>
             </span>
             <span className={`detail-stock ${product.inStock ? 'in-stock' : 'out-of-stock'}`}>

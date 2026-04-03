@@ -537,29 +537,42 @@
   display: inline-flex;
   align-items: center;
   gap: 3px;
+  flex-shrink: 0;
 }
 
-.stars-container {
-  position: relative;
-  display: inline-block;
+/* One slot per star so partial fills (e.g. 4.5) align cleanly */
+.stars-container.stars-by-slot {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.72rem;
   line-height: 1;
 }
 
-.stars-empty {
-  color: #e5e7eb;
-  letter-spacing: 1px;
-  font-size: 0.72rem;
+.star-slot {
+  position: relative;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
 }
 
-.stars-filled {
+.star-slot-bg {
+  display: block;
+  color: #e5e7eb;
+  line-height: 1;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.star-slot-fill {
   position: absolute;
-  top: 0;
   left: 0;
+  top: 0;
   overflow: hidden;
   white-space: nowrap;
+  line-height: 1;
   color: var(--warning);
-  letter-spacing: 1px;
-  font-size: 0.72rem;
+  pointer-events: none;
 }
 
 .rating-value {
@@ -660,9 +673,6 @@
 }
 
 .compact-card-meta {
-  display: flex;
-  align-items: center;
-  gap: 8px;
   margin-top: 2px;
 }
 
@@ -778,10 +788,9 @@
   gap: 4px;
 }
 
-.detail-rating .stars-empty,
-.detail-rating .stars-filled {
+.detail-rating .stars-by-slot {
   font-size: 0.9rem;
-  letter-spacing: 2px;
+  gap: 5px;
 }
 
 .detail-rating .rating-value {

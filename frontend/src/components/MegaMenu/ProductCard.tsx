@@ -1,5 +1,6 @@
 import type { ProductResult } from '../../types/product';
 import { HighlightedText } from '../HighlightedText';
+import { StarRating } from '../StarRating';
 
 interface ProductCardProps {
   product: ProductResult;
@@ -10,8 +11,6 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product, query, isFocused, onMouseEnter, onClick }: ProductCardProps) {
-  const ratingPercent = (product.rating / 5) * 100;
-
   return (
     <div
       className={`product-card${isFocused ? ' focused' : ''}${!product.inStock ? ' dimmed' : ''}`}
@@ -28,10 +27,7 @@ export function ProductCard({ product, query, isFocused, onMouseEnter, onClick }
         <span className="product-price">${product.price.toFixed(2)}</span>
         <span className="meta-separator">·</span>
         <span className="star-rating" title={`${product.rating.toFixed(1)} out of 5`}>
-          <span className="stars-container">
-            <span className="stars-empty">★★★★★</span>
-            <span className="stars-filled" style={{ width: `${ratingPercent}%` }}>★★★★★</span>
-          </span>
+          <StarRating rating={product.rating} />
           <span className="rating-value">{product.rating.toFixed(1)}</span>
         </span>
         <span className="meta-separator">·</span>
