@@ -39,12 +39,17 @@ export class SearchService implements OnApplicationBootstrap {
 
   async onApplicationBootstrap() {
     this.logger.log('Building search token dictionary...');
-    const products = await this.productModel.find({}, 'name tags').lean().exec();
-    
+    const products = await this.productModel
+      .find({}, 'name tags description category')
+      .lean()
+      .exec();
+
     const names = products.map((p) => p.name as string);
     const tags = products.map((p) => (p.tags as string[]) || []);
-    
-    this.tokenDict.build(names, tags);
+    const descriptions = products.map((p) => p.description as string);
+    const categories = products.map((p) => p.category as string);
+
+    this.tokenDict.build(names, tags, descriptions, categories);
     this.logger.log('Token dictionary built successfully.');
   }
 
@@ -54,7 +59,6 @@ export class SearchService implements OnApplicationBootstrap {
       return this.emptyResponse(query);
     }
 
-    // Fuzzy token correction
     let typoDetected = false;
     const correctedTokens = tokens.map((token) => {
       const match = this.tokenDict.findClosestToken(token);
@@ -63,8 +67,8 @@ export class SearchService implements OnApplicationBootstrap {
     });
 
     const correctedQuery = correctedTokens.join(' ');
+    const phrase = correctedTokens.join(' ');
 
-    // Primary Text Search
     let candidates = await this.productModel
       .find(
         { $text: { $search: correctedQuery } },
@@ -74,35 +78,32 @@ export class SearchService implements OnApplicationBootstrap {
       .lean()
       .exec();
 
-    // Fallback if no results or scores are extremely low
-    if (candidates.length === 0 || (candidates[0] as any).score < 0.5) {
+    if (candidates.length === 0) {
       const regexConditions = correctedTokens.map((token) => ({
         $or: [
-          { name: { $regex: new RegExp(token, 'i') } },
-          { tags: { $regex: new RegExp(token, 'i') } },
+          { name: { $regex: new RegExp(escapeRegex(token), 'i') } },
+          { tags: { $regex: new RegExp(escapeRegex(token), 'i') } },
+          { description: { $regex: new RegExp(escapeRegex(token), 'i') } },
         ],
       }));
 
-      const fallbackResults = await this.productModel
+      candidates = await this.productModel
         .find({ $and: regexConditions })
         .lean()
         .exec();
 
-      // Deduplicate with existing candidates
-      const seen = new Set(candidates.map((c) => c.id));
-      for (const item of fallbackResults) {
-        if (!seen.has(item.id as string)) {
-          (item as any).score = 0.5; // assign nominal score for fallback
-          candidates.push(item as any);
-        }
+      for (const item of candidates) {
+        (item as { score?: number }).score = 0.5;
       }
     }
 
-    // Rank candidates
-    const rankedResults: ProductResult[] = candidates.map((c: any) => {
-      const textScore = c.score || 0;
-      
+    const rankedResults: ProductResult[] = candidates.map((c: Product & { score?: number }) => {
+      const textScore = c.score ?? 0;
+
       const normalizedName = normalise(c.name);
+      const normalizedDesc = normalise(c.description);
+      const normalizedCategory = normalise(c.category);
+
       let nameMatch = false;
       for (const token of correctedTokens) {
         if (normalizedName.includes(token)) {
@@ -110,6 +111,15 @@ export class SearchService implements OnApplicationBootstrap {
           break;
         }
       }
+
+      const exactPhraseMatch =
+        phrase.length > 0 && normalizedName === phrase ? 1 : 0;
+
+      const namePrefixBoost =
+        correctedTokens.length > 0 &&
+        normalizedName.startsWith(correctedTokens[0])
+          ? 1
+          : 0;
 
       let tagMatchCount = 0;
       for (const tag of c.tags || []) {
@@ -119,10 +129,27 @@ export class SearchService implements OnApplicationBootstrap {
         }
       }
 
+      let descMatchCount = 0;
+      for (const token of correctedTokens) {
+        if (normalizedDesc.includes(token)) descMatchCount++;
+      }
+
+      let categoryMatch = false;
+      for (const token of correctedTokens) {
+        if (normalizedCategory.includes(token)) {
+          categoryMatch = true;
+          break;
+        }
+      }
+
       const finalScore =
         textScore * 4.0 +
         (nameMatch ? 3.0 : 0) +
+        exactPhraseMatch * 5.0 +
+        namePrefixBoost * 1.5 +
         tagMatchCount * 1.5 +
+        descMatchCount * 0.9 +
+        (categoryMatch ? 1.2 : 0) +
         (c.rating / 5) * 2.0 +
         (c.stock > 0 ? 1.0 : -2.0);
 
@@ -139,14 +166,16 @@ export class SearchService implements OnApplicationBootstrap {
       };
     });
 
-    // Sort descending by finalScore
-    rankedResults.sort((a, b) => b.score - a.score);
+    rankedResults.sort((a, b) => {
+      if (b.score !== a.score) return b.score - a.score;
+      if (b.rating !== a.rating) return b.rating - a.rating;
+      return a.name.localeCompare(b.name);
+    });
 
     const totalCount = rankedResults.length;
     const topResults = rankedResults.slice(0, 5);
     const byCategory: Record<string, ProductResult[]> = {};
 
-    // Group the rest by category
     const remaining = rankedResults.slice(5);
     for (const item of remaining) {
       if (!byCategory[item.category]) byCategory[item.category] = [];
@@ -175,4 +204,8 @@ export class SearchService implements OnApplicationBootstrap {
       totalCount: 0,
     };
   }
+}
+
+function escapeRegex(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
