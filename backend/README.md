@@ -6,7 +6,7 @@ This is the backend service for TIRON Smart Product Search, built with [NestJS](
 
 - **Typo-Tolerant Search**: Automatically corrects spelling mistakes in user queries by finding the closest token using a custom dictionary and Levenshtein distance.
 - **Custom Ranking Engine**: Sophisticated scoring based on multiple factors: text query relevance (MongoDB `$text`), direct name matching, tag overlap, product review rating, and stock availability.
-- **Auto-Seeding**: Populates the database automatically with sample products from `data/products.json` when the applicaton starts with an empty database.
+- **Auto-Seeding**: On startup, if the `products` collection is empty, loads **`backend/data/products.json`** and `insertMany`s all rows. No separate `mongoimport` / `npm run seed` step.
 - **Categorized Results**: Responses include globally top-ranked items alongside contextually relevant items grouped by category.
 
 ---
@@ -78,8 +78,10 @@ npm install
 2. **Configure Environment variables**
 Create a `.env` file in the root of the backend directory with your MongoDB connection string (or rely on the default module fallback).
 ```env
-MONGODB_URI=mongodb://localhost:27017/tiron-search
+MONGODB_URI=mongodb://localhost:27017/tiron
 ```
+
+(Use the same database name as the root README; the default in code is `tiron`.)
 
 ### Running the App
 
@@ -96,5 +98,5 @@ npm run start:prod
 
 ## 🏗️ Architecture & Behaviors
 
-- **Bootstrap Seeding**: During `OnApplicationBootstrap` (`src/seed/seed.service.ts`), the application checks the `products` MongoDB collection. If the collection is empty, it securely pulls from `data/products.json` and seeds the collection using `insertMany`.
+- **Bootstrap Seeding**: During `OnApplicationBootstrap` (`src/seed/seed.service.ts`), the application checks the `products` collection. If it is empty, it reads `data/products.json` (path relative to the backend working directory, i.e. `backend/data/products.json`) and seeds with `insertMany`.
 - **Search Dictionary Build**: During startup (`src/search/search.service.ts`), a token dictionary builds in memory based on the product names and tags in the collection to support fast, low-latency typo correction prior to database communication.
