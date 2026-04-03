@@ -3,27 +3,27 @@ import { ProductCard } from './ProductCard';
 
 interface TopResultsProps {
   results: ProductResult[];
+  query: string;
   focusedIndex: number;
-  expandedId: string | null;
-  onToggle: (id: string) => void;
   onHover: (index: number) => void;
+  onSelect: (product: ProductResult) => void;
 }
 
-export function TopResults({ results, focusedIndex, expandedId, onToggle, onHover }: TopResultsProps) {
+export function TopResults({ results, query, focusedIndex, onHover, onSelect }: TopResultsProps) {
   if (results.length === 0) return null;
 
   return (
     <div className="top-results">
-      <h4 className="section-label">TOP RESULTS</h4>
+      <h4 className="section-label">Top Results</h4>
       <div className="results-list">
         {results.map((product, index) => (
           <ProductCard
             key={product.id}
             product={product}
+            query={query}
             isFocused={focusedIndex === index}
-            isExpanded={expandedId === product.id}
-            onToggle={() => onToggle(product.id)}
             onMouseEnter={() => onHover(index)}
+            onClick={() => onSelect(product)}
           />
         ))}
       </div>
