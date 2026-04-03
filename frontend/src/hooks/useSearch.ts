@@ -1,6 +1,13 @@
 import { useState, useEffect, useRef } from 'react';
 import type { SearchResponse } from '../types/product';
 
+/** Base URL for the API (no trailing slash). When unset, use relative `/api` so Vite dev proxy can forward. */
+function searchUrl(query: string): string {
+  const base = (import.meta.env.VITE_API_URL ?? '').replace(/\/$/, '');
+  const path = `/api/search?q=${encodeURIComponent(query)}`;
+  return base ? `${base}${path}` : path;
+}
+
 export function useSearch() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<SearchResponse | null>(null);
@@ -27,10 +34,9 @@ export function useSearch() {
       abortControllerRef.current = new AbortController();
 
       try {
-        const response = await fetch(
-          `/api/search?q=${encodeURIComponent(query)}`,
-          { signal: abortControllerRef.current.signal }
-        );
+        const response = await fetch(searchUrl(query), {
+          signal: abortControllerRef.current.signal,
+        });
         
         if (!response.ok) {
           throw new Error('Search failed');
